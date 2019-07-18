@@ -18,8 +18,8 @@ namespace Task27
         public double GetArea() => PI * Pow(Radius, 2);
         public override void Draw(string figureType)
         {
-            base.Draw(figureType);
-            Console.WriteLine($"площадь = {Round(GetArea(), 2)}");
+            Console.WriteLine("Тип фигуры \"{0}\". Точка х = {1} , у = {2}, радиус = {3}, длина = {4}, площадь {5}", figureType,
+               X, Y, r, Round(GetLength(), 2), Round(GetArea(), 2));
             Console.WriteLine();
         }
     }

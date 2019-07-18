@@ -5,10 +5,10 @@ using static System.Math;
 
 namespace Task27
 {
-    public class Ring : Shape
+    public class Ring : Circuit
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        //public int X { get; set; }
+        //public int Y { get; set; }
 
         Round outerR;
 
@@ -26,13 +26,13 @@ namespace Task27
             set => innerR = value ?? throw new ArgumentNullException();
         }
 
-        public Ring(int x, int y, double outerR, double innerR)
+        public Ring(int x, int y, double r, double innerR) : base(x, y, r)
         {
-            if (outerR < innerR)
+            if (r < innerR)
                 throw new ArgumentException("Внешний радиус должен быть больше внутреннего.");
             X = x;
             Y = y;
-            OuterR = new Round(x, y, outerR);
+            OuterR = new Round(x, y, r);
             InnerR = new Round(x, y, innerR);
         }
 
@@ -42,16 +42,15 @@ namespace Task27
             return OuterR.GetArea() - InnerR.GetArea();
         }
 
-        public double GetLength()
+        public override double GetLength()
         {
             return OuterR.GetArea() + InnerR.GetArea();
         }
 
         public override void Draw(string figureType)
         {
-            base.Draw(figureType);
-            Console.WriteLine("Точка х = {0} , у = {1}, внешний радиус = {2}, внутрениий радиус = {3}," +
-                " площадь = {4}, длина = {5} ", X, Y, OuterR.Radius, InnerR.Radius, Round(GetArea(), 2), Round(GetLength(), 2));
+            Console.WriteLine("Тип фигуры \"{0}\". Точка х = {1} , у = {2}, внешний радиус = {3}, внутрениий радиус = {4}," +
+             " площадь = {5}, длина = {6} ", figureType, X, Y, OuterR.Radius, InnerR.Radius, Round(GetArea(), 2), Round(GetLength(), 2));
             Console.WriteLine();
         }
     }

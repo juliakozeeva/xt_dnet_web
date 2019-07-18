@@ -10,7 +10,7 @@ namespace Task27
         public int X { get; set; }
         public int Y { get; set; }
 
-        private double r;
+        protected double r;
 
         public double Radius
         {
@@ -33,12 +33,11 @@ namespace Task27
             Radius = r;
         }
 
-        public double GetLength() => 2 * PI * Radius;
+        public virtual double GetLength() => 2 * PI * Radius;
         public override void Draw(string figureType)
         {
             base.Draw(figureType);
-            Console.WriteLine("Точка х = {0} , у = {1}, радиус = {2}, длина = {3} ",
-                X, Y, r, Round(GetLength(), 2));
+            Console.WriteLine("Точка х = {0} , у = {1}, радиус = {2}, длина = {3} ", X, Y, r, Round(GetLength(), 2));
             Console.WriteLine();
         }
     }

@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task26", "..\Task26\Task26.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task27", "..\Task27\Task27.csproj", "{78AFF944-82C8-4CDA-B604-C726E1F508B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task28", "..\Task28\Task28.csproj", "{836E8CCA-60FE-4066-AAAE-8FF01ACE2988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task28", "..\Task28\Task28.csproj", "{836E8CCA-60FE-4066-AAAE-8FF01ACE2988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "..\Game\Game.csproj", "{F6F1A956-AF70-4623-B6E0-C79FD4A9AA29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{836E8CCA-60FE-4066-AAAE-8FF01ACE2988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{836E8CCA-60FE-4066-AAAE-8FF01ACE2988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{836E8CCA-60FE-4066-AAAE-8FF01ACE2988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F1A956-AF70-4623-B6E0-C79FD4A9AA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F1A956-AF70-4623-B6E0-C79FD4A9AA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F1A956-AF70-4623-B6E0-C79FD4A9AA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F1A956-AF70-4623-B6E0-C79FD4A9AA29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
