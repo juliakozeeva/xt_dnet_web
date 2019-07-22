@@ -26,7 +26,7 @@ namespace Task32
 
             for (int i = 0; i < words.Length; i++)
             {
-                list.Add(words[i]);
+                list.Add(words[i].ToLower());
             }
 
 
