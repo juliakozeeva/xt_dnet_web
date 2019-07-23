@@ -10,13 +10,13 @@ namespace Task31
         {
             Console.WriteLine("Введите любое натуральное число: ");
             bool input = int.TryParse(Console.ReadLine(), out int num);
-            if(input && num > 0)
+            if (input && num > 0)
                 Lost(num);
             else
                 Console.WriteLine("Повторите ввод.");
         }
 
-        public static void Lost (int num)
+        public static void Lost(int num)
         {
             ArrayList array = new ArrayList(num);
             for (int i = 1; i <= num; i++)

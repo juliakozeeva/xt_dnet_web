@@ -43,7 +43,7 @@ namespace Task32
                         count++;
                     }
                 }
-               Console.WriteLine("Слово {0} \tвстречается {1} раз(а)", set[i], count);
+                Console.WriteLine("Слово {0} \tвстречается {1} раз(а)", set[i], count);
             }
         }
     }
