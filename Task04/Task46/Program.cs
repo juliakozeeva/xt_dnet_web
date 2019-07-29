@@ -37,7 +37,7 @@ namespace Task46
             });
             Console.WriteLine($"The method to which the search condition is passed through the delegate as an anonymous method. Max = {max3}");
 
-            var max4 = MaximumDelegateMethod(myArray, (int max, int item ) => max.CompareTo(item) < 0);
+            var max4 = MaximumDelegateMethod(myArray, ( max,  item ) => max.CompareTo(item) < 0);
             Console.WriteLine($"The method to which the search condition is passed through the delegate in the form of a lambda expression. Max = {max4}");
 
             var max5 = myArray.Max();
