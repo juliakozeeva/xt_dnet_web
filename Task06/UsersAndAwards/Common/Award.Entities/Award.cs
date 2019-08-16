@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,15 @@ namespace UsersAndAwards.Entities
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public Award(string title, string description, int Id = 0)
+        public virtual List<User> Users { get; set; } = new List<User>();
+        public Award() { }
+        public Award(string title)
         {
-            this.Id = Id;
             Title = title ?? throw new ArgumentNullException(nameof(title));
         }
         public override string ToString()
         {
-            return $"{Title}";
+            return $"{Id} {Title}";
         }
     }
 }

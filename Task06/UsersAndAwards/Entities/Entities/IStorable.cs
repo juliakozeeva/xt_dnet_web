@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UsersAndAwards.Entities;
 
 namespace Entities
 {
-    public interface IStorable<T>
+    public interface IStorable
     {
-        void AddUser(T item);
+        void AddUser(User user);
         bool DeleteUser(int id);
-        T GetByIdUser(int id);
-        IEnumerable<T> GetAllUser();
+        User GetByIdUser(int id);
+        IEnumerable<User> GetAllUser();
+
+        void AddAward(Award award);
+        bool DeleteAward(int id);
+        IEnumerable<Award> GetAllAward();
     }
 }

@@ -54,6 +54,10 @@
       <Project>{76737E25-044F-4B23-AB6A-2146E0A471AD}</Project>
       <Name>Users.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\Award.Entities\Award.Entities.csproj">
+      <Project>{4afa4869-58c6-4cdb-9e8d-f2cd025351f2}</Project>
+      <Name>Award.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\Dependensies\Users.Common.csproj">
       <Project>{c3458585-84ad-4b20-b838-d6e2a5426eb3}</Project>
       <Name>Users.Common</Name>

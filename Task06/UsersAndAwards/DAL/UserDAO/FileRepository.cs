@@ -10,7 +10,7 @@ using UsersAndAwards.Entities;
 
 namespace UsersAndAwards.DAL
 {
-    public class FileRepository : IStorable<User>
+    public class FileRepository : IStorable
     {
         private static readonly string path = "../../../storage/users.txt";
 
@@ -64,8 +64,7 @@ namespace UsersAndAwards.DAL
             else
             {
                 return RepositoryUsers.Values;
-            }
-            
+            }            
         }
 
         public User GetByIdUser(int id)
@@ -73,6 +72,59 @@ namespace UsersAndAwards.DAL
             if (!RepositoryUsers.TryGetValue(id, out var user))
                 throw new ArgumentOutOfRangeException($"Users with id {id} not found.");
             return user;
+        }
+
+        private static readonly string pathToAwards = "../../../storage/awards.txt";
+
+        private static Dictionary<int, Award> FileWithAwards()
+        {
+            Dictionary<int, Award> awardsRepo = new Dictionary<int, Award>();
+            var lines = File.ReadAllLines(pathToAwards);
+            foreach (var line in lines)
+            {
+                int id = int.Parse(line.Split(' ')[0]);
+                string title = line.Split(' ')[1];
+                Award award = new Award
+                {
+                    Id = id,
+                    Title = title,
+                };
+
+                awardsRepo.Add(int.Parse(line.Split(' ')[0]), award);
+            }
+            return awardsRepo;
+        }
+
+        private static readonly Dictionary<int, Award> RepositoryAwards = FileWithAwards();
+
+        public void AddAward(Award award)
+        {
+            var lastId = RepositoryAwards.Any() ? RepositoryAwards.Keys.Max() : 0;
+            award.Id = ++lastId;
+            RepositoryAwards.Add(award.Id, award);
+            File.AppendAllLines(pathToAwards, new[] { award.ToString() });
+        }
+
+        public bool DeleteAward(int id)
+        {
+            if (!RepositoryAwards.TryGetValue(id, out var award))
+                throw new ArgumentOutOfRangeException($"Award {award} with id {id} not found.");
+            RepositoryAwards.Remove(id);
+
+            var afterDelete = RepositoryAwards.Values.Select(x => x.ToString()).ToArray();
+            return true;
+        }
+
+        public IEnumerable<Award> GetAllAward()
+        {
+            if (RepositoryAwards.Values.Count == 0)
+            {
+                throw new ArgumentOutOfRangeException($"Award not exists.");
+            }
+            else
+            {
+                return RepositoryAwards.Values;
+            }
         }
     }
 }

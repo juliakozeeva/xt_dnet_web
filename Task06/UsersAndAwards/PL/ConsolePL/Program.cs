@@ -53,7 +53,29 @@ namespace ConsolePL
                 {
                         ShowUsers();
                 }
-                Console.WriteLine("\nDo another action with users? (y/n)");
+                else if (key == ConsoleKey.D5)
+                {
+                    do
+                    {
+                        AddAward();
+                        Console.WriteLine("Add another award? (y/n)");
+                    }
+                    while (Console.ReadKey().Key == ConsoleKey.Y);
+                }
+                else if (key == ConsoleKey.D6)
+                {
+                    do
+                    {
+                        DeleteAward();
+                        Console.WriteLine("Delete another award? (y/n)");
+                    }
+                    while (Console.ReadKey().Key == ConsoleKey.Y);
+                }
+                else if (key == ConsoleKey.D7)
+                {
+                    ShowAwards();
+                }
+                Console.WriteLine("\nDo another action? (y/n)");
             }
             while (Console.ReadKey().Key == ConsoleKey.Y);
         }
@@ -108,13 +130,49 @@ namespace ConsolePL
                 Console.WriteLine(user);
             }
         }
+        private static void AddAward()
+        {
+            Console.WriteLine("\nEnter the information about award.");
+            Console.Write("Title: ");
+            string title = Console.ReadLine();
+            if (title == "")
+            {
+                Console.WriteLine("Data must be field. Try again.");
+                AddAward();
+            }
+            var award = new Award(title);
+            UserLogic.AddAward(award);
+        }
 
+        private static void DeleteAward()
+        {
+            Console.WriteLine("\nEnter ID deleted award.");
+            int id = int.Parse(Console.ReadLine());
+            UserLogic.DeleteAward(id);
+            Console.WriteLine($"Award was deleted.");
+
+        }
+        private static void ShowAwards()
+        {
+            Console.WriteLine("\n");
+            foreach (var award in UserLogic.GetAllAward())
+            {
+                Console.WriteLine(award);
+            }
+        }
 
         static string[] menuHelp = new string[]  {
-            "1. Add user",
-            "2. Delete user",
-            "3. Show user by id",
-            "4. Show all users"
+
+            "Users:",
+            "\t1. Add user",
+            "\t2. Delete user",
+            "\t3. Show user by id",
+            "\t4. Show all users",
+            "Awards:",
+            "\t5. Add award",
+            "\t6. Delete award",
+            "\t7. Show all awards",
+
         };
     }
 }

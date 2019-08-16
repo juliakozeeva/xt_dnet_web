@@ -14,7 +14,7 @@ namespace UsersAndAwards.Entities
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
 
-        public List<Award> Awards { get; set; } = new List<Award>();
+        public virtual List<Award> Awards { get; set; } = new List<Award>();
 
         public User() { }
 

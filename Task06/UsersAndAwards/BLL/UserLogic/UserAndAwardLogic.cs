@@ -11,7 +11,7 @@ namespace UsersAndAwards.BLL
 {
     public static class UserLogic 
     {
-        public static IStorable<User> Repository => Dependensies.UsersRepository;
+        public static IStorable Repository => Dependensies.UsersAndAwardsRepository;
 
         public static void AddUser(User user)
         {
@@ -57,6 +57,32 @@ namespace UsersAndAwards.BLL
                 throw new ArgumentException("Users not found.", e);
             }            
         }
+        public static void AddAward(Award award)
+        {
+            Repository.AddAward(award);
+        }
+        public static bool DeleteAward(int id)
+        {
+            try
+            {
+                return Repository.DeleteAward(id);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
 
+                throw new ArgumentException("Award not found.", "id", e);
+            }
+        }
+        public static IEnumerable<Award> GetAllAward()
+        {
+            try
+            {
+                return Repository.GetAllAward();
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                throw new ArgumentException("Award not found.", e);
+            }
+        }
     }
 }

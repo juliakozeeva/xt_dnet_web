@@ -11,6 +11,6 @@ namespace UsersAndAwards.Common
 {
     public class Dependensies
     {
-        public static IStorable<User> UsersRepository { get; } = new FileRepository();
+        public static IStorable UsersAndAwardsRepository { get; } = new FileRepository();
     }
 }
