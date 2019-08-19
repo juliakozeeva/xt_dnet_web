@@ -76,5 +76,35 @@ namespace UsersAndAwards.DAL
             }
             return AwardsList.Values;
         }
+        public Award GetByIdAward(int id)
+        {
+            if (!AwardsList.TryGetValue(id, out var award))
+                throw new ArgumentOutOfRangeException($"Awards with id {id} not found.");
+            return award;
+        }
+
+        public void AwardUser(int idAward, int idUser)
+        {
+            Award award = null;
+            User user = null;
+
+            if (UsersList.TryGetValue(idUser, out var value1))
+            {
+                user = value1;
+            }
+            if (AwardsList.TryGetValue(idAward, out var value2))
+            {
+                award = value2;
+            }
+            if (!user.Awards.Contains(award.Title))
+            {
+                award.Users.Add(user.Name);
+                user.Awards.Add(award.Title);
+            }
+            else
+            {
+                Console.WriteLine("User has got this award already");
+            }
+        }
     }
 }

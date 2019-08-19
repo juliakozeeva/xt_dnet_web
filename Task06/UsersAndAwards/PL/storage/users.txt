@@ -1,4 +1,3 @@
-1 Galya 07.07.2007 12
-2 Misha 01.01.2001 18
-3 Nastya 05.05.2005 14
-4 Ya 08.12.1994 25
+1 Sasha 12.05.1997 22 AwardOne, AwardTwo
+2 Masha 07.01.1990 29 AwardTwo
+3 Nate 07.07.2005 14 

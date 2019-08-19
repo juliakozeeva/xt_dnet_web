@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UsersAndAwards.DAL;
 using UsersAndAwards.Entities;
@@ -12,25 +13,32 @@ namespace UsersAndAwards.DAL
 {
     public class FileRepository : IStorable
     {
-        private static readonly string path = "../../../storage/users.txt";
+        private static readonly string pathToUsers = "../../../storage/users.txt";
 
         private static Dictionary<int, User> FileWithUsers ()
         {
             Dictionary<int, User> usersRepo = new Dictionary<int, User>();
-            var lines = File.ReadAllLines(path);
+            var lines = File.ReadAllLines(pathToUsers);
             foreach (var line in lines)
             {
-                int id = int.Parse(line.Split(' ')[0]);
-                string name = line.Split(' ')[1];
-                DateTime dateOfBirth = DateTime.Parse(line.Split(' ')[2]);
+                List<string> splitLine = new List<string>(line.Split(' '));
+                int id = int.Parse(splitLine[0]);
+                string name = splitLine[1];
+                DateTime dateOfBirth = DateTime.Parse(splitLine[2]);
+                List<string> awards = new List<string>();
+                for (int i = 4; i < splitLine.Count(); i++)
+                {
+                    awards.Add(Regex.Replace(splitLine[i], ",", ""));
+                }
                 User user = new User
                 {
                     Id = id,
                     Name = name,
                     DateOfBirth = dateOfBirth,
+                    Awards = awards
                 };
 
-                usersRepo.Add(int.Parse(line.Split(' ')[0]), user);
+                usersRepo.Add(int.Parse(splitLine[0]), user);
             }
             return usersRepo;
         }
@@ -42,7 +50,7 @@ namespace UsersAndAwards.DAL
             var lastId = RepositoryUsers.Any() ? RepositoryUsers.Keys.Max() : 0;
             user.Id = ++lastId;
             RepositoryUsers.Add(user.Id, user);
-            File.AppendAllLines(path, new[] { user.ToString() });
+            File.AppendAllLines(pathToUsers, new[] { user.ToString() });
         }
 
         public bool DeleteUser(int id)
@@ -52,6 +60,7 @@ namespace UsersAndAwards.DAL
             RepositoryUsers.Remove(id);
 
             var afterDelete = RepositoryUsers.Values.Select(x => x.ToString()).ToArray();
+            File.WriteAllLines(pathToUsers, afterDelete);
             return true;
         }
 
@@ -82,15 +91,16 @@ namespace UsersAndAwards.DAL
             var lines = File.ReadAllLines(pathToAwards);
             foreach (var line in lines)
             {
-                int id = int.Parse(line.Split(' ')[0]);
-                string title = line.Split(' ')[1];
+                string[] splitLine = line.Split(' ');
+                int id = int.Parse(splitLine[0]);
+                string title = splitLine[1];
                 Award award = new Award
                 {
                     Id = id,
                     Title = title,
                 };
 
-                awardsRepo.Add(int.Parse(line.Split(' ')[0]), award);
+                awardsRepo.Add(int.Parse(splitLine[0]), award);
             }
             return awardsRepo;
         }
@@ -112,6 +122,7 @@ namespace UsersAndAwards.DAL
             RepositoryAwards.Remove(id);
 
             var afterDelete = RepositoryAwards.Values.Select(x => x.ToString()).ToArray();
+            File.WriteAllLines(pathToAwards, afterDelete);
             return true;
         }
 
@@ -124,6 +135,50 @@ namespace UsersAndAwards.DAL
             else
             {
                 return RepositoryAwards.Values;
+            }
+        }
+
+        public Award GetByIdAward(int id)
+        {
+            if (!RepositoryAwards.TryGetValue(id, out var award))
+                throw new ArgumentOutOfRangeException($"Awards with id {id} not found.");
+            return award;
+        }
+
+        public void AwardUser(int idAward, int idUser)
+        {
+            Award award = null;
+            User user = null;
+
+            if (RepositoryUsers.TryGetValue(idUser, out var value1))
+            {
+                user = value1;
+            }
+            if (RepositoryAwards.TryGetValue(idAward, out var value2))
+            {
+                award = value2;
+            }
+            if (!user.Awards.Contains(award.Title))
+            {
+                award.Users.Add(user.Name);
+                user.Awards.Add(award.Title);
+
+                File.WriteAllText(pathToAwards, string.Empty);
+                foreach (var item in RepositoryAwards.Values)
+                {
+
+                    File.AppendAllLines(pathToAwards, new[] { item.ToString() });
+                }
+
+                File.WriteAllText(pathToUsers, string.Empty);
+                foreach (var item in RepositoryUsers.Values)
+                {
+                    File.AppendAllLines(pathToUsers, new[] { item.ToString() });
+                }
+            }
+            else
+            {
+                Console.WriteLine("User has got this award already");
             }
         }
     }

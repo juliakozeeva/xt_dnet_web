@@ -11,11 +11,11 @@ namespace UsersAndAwards.Entities
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public virtual List<User> Users { get; set; } = new List<User>();
+        public List<string> Users { get; set; } = new List<string>();
         public Award() { }
         public Award(string title)
         {
-            Title = title ?? throw new ArgumentNullException(nameof(title));
+            Title = title;
         }
         public override string ToString()
         {

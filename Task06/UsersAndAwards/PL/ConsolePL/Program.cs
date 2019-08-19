@@ -75,6 +75,15 @@ namespace ConsolePL
                 {
                     ShowAwards();
                 }
+                else if (key == ConsoleKey.D8)
+                {
+                    do
+                    {
+                        AwardUser();
+                        Console.WriteLine("Award another user? (y/n)");
+                    }
+                    while (Console.ReadKey().Key == ConsoleKey.Y);
+                }
                 Console.WriteLine("\nDo another action? (y/n)");
             }
             while (Console.ReadKey().Key == ConsoleKey.Y);
@@ -83,12 +92,14 @@ namespace ConsolePL
         private static void AddUser()
         {
             Console.WriteLine("\nEnter the information about user.");
-            Console.Write("First name: ");
-            string name = Console.ReadLine();
-            if (name == "")
+            string name;
+            while (true)
             {
-                Console.WriteLine("Data must be field. Try again.");
-                AddUser();
+                Console.Write("First name: ");
+                name = Console.ReadLine();
+                if (name == "")
+                    Console.WriteLine("Data must be field. Try again.");
+                else break;
             }
             DateTime dateOfBirth;
             while (true)
@@ -97,7 +108,7 @@ namespace ConsolePL
                 dateOfBirth = DateTime.Parse(Console.ReadLine());
                 if ((dateOfBirth.Year < 1900) || (dateOfBirth.Year > DateTime.Now.Year))
                 {
-                    Console.WriteLine("User cannot be older than 120 years");
+                    Console.WriteLine("Invalid date of birth.");
                 }
                 else break;
             }
@@ -133,12 +144,14 @@ namespace ConsolePL
         private static void AddAward()
         {
             Console.WriteLine("\nEnter the information about award.");
-            Console.Write("Title: ");
-            string title = Console.ReadLine();
-            if (title == "")
+            string title;
+            while(true)
             {
-                Console.WriteLine("Data must be field. Try again.");
-                AddAward();
+                Console.Write("Title: ");
+                title = Console.ReadLine();
+                if (title == "")
+                    Console.WriteLine("Data must be field. Try again.");
+                else break;
             }
             var award = new Award(title);
             UserLogic.AddAward(award);
@@ -161,6 +174,18 @@ namespace ConsolePL
             }
         }
 
+        private static void AwardUser()
+        {
+            Console.WriteLine("\nChoose user for award: ");
+            ShowUsers();
+            int idUser = int.Parse(Console.ReadLine());
+            Console.WriteLine("Choose award for user: ");
+            ShowAwards();
+            int idAward = int.Parse(Console.ReadLine());
+            UserLogic.AwardUser(idAward, idUser);
+            ShowUsers();
+        }
+
         static string[] menuHelp = new string[]  {
 
             "Users:",
@@ -172,6 +197,8 @@ namespace ConsolePL
             "\t5. Add award",
             "\t6. Delete award",
             "\t7. Show all awards",
+            "Users and Awards",
+            "\t8. Award user",
 
         };
     }

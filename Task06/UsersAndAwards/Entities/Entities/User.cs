@@ -12,9 +12,7 @@ namespace UsersAndAwards.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime DateOfBirth { get; set; }
-
-        public virtual List<Award> Awards { get; set; } = new List<Award>();
+        public DateTime DateOfBirth { get; set; }        
 
         public User() { }
 
@@ -35,11 +33,12 @@ namespace UsersAndAwards.Entities
             }
         }
 
+        public List<string> Awards { get; set; } = new List<string>();
         public string AwardsString => string.Join(", ", Awards);
 
         public override string ToString()
         {
-            return $"{Id} {Name} {DateOfBirth.ToShortDateString()} {Age}";
+            return $"{Id} {Name} {DateOfBirth.ToShortDateString()} {Age} {AwardsString}";
         }
     }
 }

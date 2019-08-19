@@ -27,7 +27,7 @@ namespace UsersAndAwards.BLL
             catch (ArgumentOutOfRangeException e)
             {
 
-                throw new ArgumentException("Users not found.", "id", e);
+                throw new ArgumentException("User not found.", "id", e);
             }
             
         }
@@ -41,7 +41,7 @@ namespace UsersAndAwards.BLL
             catch (ArgumentOutOfRangeException e)
             {
 
-                throw new ArgumentException("Users not found.", "id", e);
+                throw new ArgumentException("User not found.", "id", e);
             }
             
         }
@@ -57,6 +57,8 @@ namespace UsersAndAwards.BLL
                 throw new ArgumentException("Users not found.", e);
             }            
         }
+
+
         public static void AddAward(Award award)
         {
             Repository.AddAward(award);
@@ -73,6 +75,7 @@ namespace UsersAndAwards.BLL
                 throw new ArgumentException("Award not found.", "id", e);
             }
         }
+
         public static IEnumerable<Award> GetAllAward()
         {
             try
@@ -81,8 +84,34 @@ namespace UsersAndAwards.BLL
             }
             catch (ArgumentOutOfRangeException e)
             {
-                throw new ArgumentException("Award not found.", e);
+                throw new ArgumentException("Awards not found.", e);
             }
+        }
+
+        public static Award GetByIdAward(int id)
+        {
+            try
+            {
+                return Repository.GetByIdAward(id);
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+
+                throw new ArgumentException("Awards not found.", "id", e);
+            }
+        }
+
+        public static void AwardUser(int idAward, int idUser)
+        {
+            try
+            {
+                Repository.AwardUser(idAward, idUser);
+            }
+            catch (ArgumentOutOfRangeException  e)
+            {
+
+                throw new ArgumentException("Users not found.", "idUser", e);
+            }            
         }
     }
 }
