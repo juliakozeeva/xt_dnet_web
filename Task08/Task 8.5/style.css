@@ -1,0 +1,57 @@
+body {
+    background: #4E6379;
+    font-family: sans-serif;
+}
+.price-block {
+    width: 605px;
+    background: #fff;
+    padding: 10px 0;
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 28px 40px rgba(0, 0, 0, 0.3);
+}
+.price-block:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+.block {
+    width: 201px;
+    float: left;
+    border-right: 1px solid #ddd;
+}
+.block:last-child {
+    border: none;
+}
+.back-img {
+    height: 42px;
+    width: 61px;
+    margin: 0 auto;
+}
+.shared-hosting {
+    background: url(http://htmlbook.ru/files/hosting.png) no-repeat 0 0;
+}
+.cloud-hosting {
+    background: url(http://htmlbook.ru/files/hosting.png) no-repeat 0 -42px;
+}
+.dfc {
+    background: url(http://htmlbook.ru/files/hosting.png) no-repeat 0 -84px;
+}
+h2 {
+    color: #F56332;
+    font-size: 16px;
+    line-height: 16px;
+}
+p {
+    font: 12px sans-serif;
+}
+button {
+    background: #F56332;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-size: 12px;
+}

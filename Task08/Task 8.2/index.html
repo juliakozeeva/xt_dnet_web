@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form-wrapper">
+    <h1>Регистрация</h1>
+    <hr>
+    <form action="#">
+        <div class="user-info_mail">
+            <label for="mail">E-mail</label>
+            <input type="email" id="mail" name="user_mail">
+        </div>
+        <div class="user-info_password">
+            <div class="input-password">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="user_password">
+            </div>
+            <div class="input-password-repeat">
+                <label for="repeat_password">Ещё раз</label>
+                <input type="password" id="repeat_password" name="user_password">
+            </div>
+        </div>
+        <button type="submit"><span class="btn">Отправить</span></button>
+    </form>
+</div>
+</body>
+</html>

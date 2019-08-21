@@ -1,0 +1,28 @@
+body {
+    background-color: darkslategrey;
+}
+.block {
+    background-color: lightblue;
+    border: 5px solid aliceblue;
+    margin: 40px;
+    position: relative;
+}
+
+.block::before {
+    content: '';
+    background-color: lightblue;
+    border-left: 5px solid aliceblue;
+    border-top: 5px solid aliceblue;
+    transform: rotate(45deg);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -21px;
+    left: calc(50% - 17px);
+    z-index: 10;
+}
+
+.block__txt {
+    color: white;
+    text-align: center;
+}

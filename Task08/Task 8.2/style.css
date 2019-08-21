@@ -1,0 +1,64 @@
+:root {
+    --form-padding: 20px;
+}
+
+.form-wrapper {
+    background-color: dodgerblue;
+    width: 500px;
+    border: 3px solid royalblue;
+    margin: 30px;
+}
+.form-wrapper h1 {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 100;
+    margin: 0;
+    padding: var(--form-padding);
+}
+
+hr {
+    margin: 0;
+    height: 3px;
+}
+
+form {
+    padding: var(--form-padding);
+    padding-right: 60px;
+}
+
+label {
+    display: block;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #fff;
+    padding-bottom: 5px;
+}
+input {
+    width: 100%;
+}
+
+.user-info_mail {
+    padding-bottom: var(--form-padding);
+}
+.user-info_password {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: var(--form-padding);
+}
+.input-password {
+    margin-right: 35px;
+    width: 100%;
+}
+.input-password-repeat {
+    width: 100%;
+}
+
+button {
+    background-color: khaki;
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+}
+span.btn {
+    font-family: sans-serif;
+}

@@ -1,0 +1,17 @@
+ul {
+    list-style-type: none;
+}
+.menu {
+    width: 200px;
+    background-color: moccasin;
+    padding: 10px 5px;
+    margin: 10px auto;
+    border: 2px solid black;
+    border-radius: 5%;
+    box-shadow: 10px 10px 2px -3px brown;
+}
+
+.menu li {
+    color: brown;
+    line-height: 25px;
+}
