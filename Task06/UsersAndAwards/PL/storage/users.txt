@@ -1,3 +1,2 @@
 1 Sasha 12.05.1997 22 AwardOne, AwardTwo
-2 Masha 07.01.1990 29 AwardTwo
-3 Nate 07.07.2005 14 
+2 Masha 07.01.1990 29 AwardTwo, NewAward
