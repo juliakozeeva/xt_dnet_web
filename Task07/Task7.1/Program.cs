@@ -21,7 +21,7 @@ namespace Task7._1
             Console.ReadLine();
         }
 
-        public static bool CheckInputDateValue (string input)
+        public static bool CheckInputDateValue(string input)
         {
             Regex regex = new Regex(@"((0[1-9]|[1-2]\d|3[0-1])-(0[1-9]|1[0-2])-[1-2]\d{3})");
             if (regex.IsMatch(input))
