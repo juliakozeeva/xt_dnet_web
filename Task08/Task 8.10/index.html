@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VK</title>
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="page-header-wrap">
+            <div class="page-header">
+                <div class="head_nav_item">
+                    <div class="top_home_link">
+                        <div class="top_home_logo">
+                            <img src="img/ic_head_logo.svg" alt="logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="head_nav_item">
+                    <input type="text" class="text ts_input" name="disable-autofill" aria-label="Поиск">
+                </div>
+                <div class="head_nav_item head_nav_btn">
+                    <div class="top_nav_btn_group">
+                        <div class="top_nav_btn_icon notification"></div>
+                    </div>
+                    <div class="top_nav_btn_group">
+                        <div class="top_nav_btn_icon audio"></div>
+                    </div>
+                </div>
+                <div class="head_nav_item margin-left">
+                    <a class="top_profile_link">
+                        <div class="top_profile_name">Имя</div>
+                        <img class="top_profile_img" src="img/avatar.JPG" alt="avatar">
+                        <div class="top_profile_arrow"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="page_layout">
+            <div class="side_bar">
+                <div class="side_bar_inner">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                <span class="left_icon fl_p"></span> Моя страница
+                                </a>
+                            </li>
+                            <li><a href="#">
+                                <span class="left_icon fl_n"></span>
+                                Новости</a></li>
+                            <li><a href="#">
+                                <span class="left_icon fl_mes"></span>
+                                Сообщения</a></li>
+                            <li><a href="#"><span class="left_icon fl_fr"></span>
+                                Друзья</a></li>
+                            <li><a href="#"><span class="left_icon fl_com"></span>
+                                Сообщества</a></li>
+                            <li><a href="#"><span class="left_icon fl_f"></span>
+                                Фотографии</a></li>
+                            <li><a href="#">
+                                <span class="left_icon fl_m"></span>
+                                Музыка</a></li>
+                            <li><a href="#">
+                                <span class="left_icon fl_v"></span>
+                                Видео</a></li>
+                            <li><a href="#">
+                                <span class="left_icon fl_doc"></span>
+                                Документы</a></li>
+                            <div class="more_div"></div>
+                        </ul>
+                    </nav>
+                    <div class="left_menu_nav_wrap">
+                        <a class="left_menu_nav" href="#" data-stats-key="blog">Блог</a>
+                        <a class="left_menu_nav" href="#" data-stats-key="dev">Разработчикам</a>
+                        <a class="left_menu_nav" href="#" data-stats-key="biz">Реклама</a>
+                    </div>
+                </div>
+            </div>
+            <div class="page_body">
+                <div class="wide_column">
+                    <div class="page_block">
+                        <h2 class="page_block_h2">Общее</h2>
+                        <div class="settings_panel">
+                            <div class="settings_line">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Меню сайта
+                                    </div>
+                                    <div class="settings_labeled_text">
+                                        <a href="#">Настроить отображение пунктов меню</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_line">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Настройки профиля
+                                    </div>
+                                    <div class="settings_labeled_text">
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_hide_gifts"  checked="">
+                                            <label for="settings_hide_gifts">Скрывать блок подарков</label>
+                                        </div>
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_status_default"  checked="">
+                                            <label for="settings_status_default">При открытии профиля показывать мои записи</label>
+                                        </div>
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_no_wall_replies"  checked="">
+                                            <label for="settings_no_wall_replies">Отключить комментирование записей</label>
+                                        </div>
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_a11y"  checked="">
+                                            <label for="settings_a11y">Специальные возможности</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_line">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Настройки контента
+                                    </div>
+                                    <div class="settings_labeled_text">
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_video_autoplay"  checked="">
+                                            <label for="settings_video_autoplay">Автоматически воспроизводить видео</label>
+                                        </div>
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_gif_autoplay"  checked="">
+                                            <label for="settings_gif_autoplay">Автоматически воспроизводить GIF-анимации </label>
+                                        </div>
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_stickers_hints"  checked="">
+                                            <label for="settings_stickers_hints">Подсказывать стикеры в полях ввода</label>
+                                        </div>
+                                        <div class="settings_narrow_row">
+                                            <input class="blind_label" type="checkbox" id="settings_autotag_friends"  checked="">
+                                            <label for="settings_autotag_friends">Автоматически отмечать друзей на фотографиях</label>
+                                        </div>
+                                        <div class="settings_narrow_row">
+                                            Сортировка комментариев:
+                                            <div class="idd_selected_value">сначала интересные</div>
+                                        </div>
+                                        <div class="settings_link_row">
+                                            <a href="#">Посмотреть заблокированные приложения</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_line cursor">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Пароль
+                                    </div>
+                                    <a class="settings_right_control">
+                                        Изменить
+                                    </a>
+                                    <div class="settings_labeled_text">
+                                        обновлён 10 месяцев назад
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_line cursor">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Электронная почта
+                                    </div>
+                                    <a class="settings_right_control">
+                                        Изменить
+                                    </a>
+                                    <div class="settings_labeled_text">
+                                        y****@gmail.com
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_line cursor">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Номер телефона
+                                    </div>
+                                    <a class="settings_right_control">
+                                        Изменить
+                                    </a>
+                                    <div class="settings_labeled_text">
+                                        +7 *** *** ** 85
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_line cursor">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Адрес страницы
+                                    </div>
+                                    <a class="settings_right_control">
+                                        Изменить
+                                    </a>
+                                    <div class="settings_labeled_text">
+                                        https://vk.com/
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_line cursor">
+                                <div class="settings_info_block">
+                                    <div class="settings_label">
+                                        Язык
+                                    </div>
+                                    <a class="settings_right_control">
+                                        Изменить
+                                    </a>
+                                    <div class="settings_labeled_text">
+                                        Русский
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings_block_footer">
+                                Вы можете <a href="#">удалить свою страницу</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="narrow_column">
+                    <div class="page_block ui_menu">
+                        <a href="#" class="ui_menu_general ui_menu_item">
+                            Общее
+                        </a>
+                        <a href="#" class="ui_menu_security ui_menu_item">
+                            Безопасность
+                        </a>
+                        <a href="#" class="ui_menu_privacy ui_menu_item">
+                            Приватность
+                        </a>
+                        <a href="#" class=" feedback_menu_item ui_menu_item">
+                            Уведомления <span class="ui_actions_menu_icons"></span>
+                        </a>
+                        <a href="#" class="ui_menu_blacklist ui_menu_item">
+                            Чёрный список
+                        </a>
+                        <a href="#" class="ui_menu_apps ui_menu_item">
+                            Настройки приложений
+                        </a>
+                        <a href="#" class="ui_menu_mobile ui_menu_item">
+                            Мобильные сервисы
+                        </a>
+                        <a href="#" class="ui_menu_payments ui_menu_item">
+                            Платежи, подписки, переводы
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

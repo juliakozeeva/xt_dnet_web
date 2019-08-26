@@ -1,0 +1,17 @@
+.title {
+    background-color: mediumseagreen;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.text {
+    padding: 10px;
+    margin: 10px 10px 10px 40px;
+    background-color: gainsboro;
+    position: absolute;
+    top: 30px;
+    border: 1px solid white;
+}

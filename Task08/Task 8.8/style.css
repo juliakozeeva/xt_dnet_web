@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+}
+.article {
+    font-family: Arial, sans-serif;
+    width: 400px;
+    padding: 10px;
+    margin: 10px 40px;
+    background: #eee linear-gradient(0deg,#ddd,#fff);
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #fff;
+    position: relative;
+}
+.title {
+    display: inline-block;
+    padding: 10px;
+    color: #ffb163;
+    background-color: black;
+    font-size: 24px;
+    font-weight: 600;
+    position: relative;
+    top: -12px;
+    left: -12px;
+}
+.title::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -23px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 47px solid #000;
+    border-right: 23px solid transparent;
+}
+.text {
+    font-size: 14px;
+    line-height: 20px;
+}
