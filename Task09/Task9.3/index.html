@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Butterfly Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Task 9.3. Butterfly Control</h1>
+<p>Создать страницу со следующим набором элементов (интерфейс приблизителен): <br>
+    <img src="img/ExampleMain.JPG"/>
+    <br>
+    При нажатии кнопок <img class="imageInText" src="img/RightOne.JPG"/> и <img src="img/LeftOne.JPG"/> выделенные элементы из одного списка перекидываются в
+    другой. При этом выделение с них снимается, и они добавляются в конец списка. Если ни один из
+    элементов не выделен, выводится соответствующее сообщение.
+    <br>
+    При нажатии кнопок <img src="img/RightTwo.JPG"/> и <img src="img/LeftTwo.JPG"/> все элементы из одного списка перекидываются в другой.
+</p>
+<div class="container">
+    <span class="left">Available</span>
+    <div class="block left-block">
+        <select id="left-select" class="available" multiple size=5>
+            <option class="item">Option 1</option>
+            <option class="item">Option 2</option>
+            <option class="item">Option 3</option>
+            <option class="item">Option 4</option>
+            <option class="item">Option 5</option>
+        </select>
+    </div>
+    <div class="buttons-block">
+        <button class="moveItem" onclick="AllItemsToRight()"> >> </button>
+        <button class="moveItem" onclick="OneItemToRight()"> > </button>
+        <button class="moveItem" onclick="OneItemToLeft()"> < </button>
+        <button class="moveItem" onclick="AllItemsToLeft()"> << </button>
+    </div>
+    <span class="right">Selected</span>
+    <div class="block right-block">
+        <select id="right-select" class="selected" multiple size=5> </select>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

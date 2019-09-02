@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 130px;
+    justify-content: space-between;
+}
+.container > span {
+    position: absolute;
+    top: 0;
+}
+span.left {
+    left: 30px;
+}
+span.right {
+    right: 30px;
+}
+.buttons-block {
+
+}
+.moveItem {
+    display: block;
+    width: 30px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+.block {
+    width: 120px;
+    height: 90px;
+    border: 1px solid black;
+}
+select {
+    width: inherit;
+    overflow-y: hidden;
+}

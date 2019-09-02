@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="watch-over"><h1>Watch over</h1></div>
+<h1>Page 3</h1>
+<img src="img/3.jpg" alt="3">
+<div class="time-block">
+    <div id="time"></div>
+    <button id="pause" onclick="Pause()"> || </button>
+    <button id="previous" onclick="toPreviousPage()"> << </button>
+    <button id="next" onclick="toNextPage()"> >> </button>
+</div>
+
+<script src="script.js"></script>
+<script type="text/javascript">
+    setPage(3);
+    countDown();
+</script>
+</body>
+</html>

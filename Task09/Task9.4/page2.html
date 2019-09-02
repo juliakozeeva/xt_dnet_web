@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Page 2</h1>
+<img src="img/2.jpg" alt="2">
+<div class="time-block">
+    <div id="time"></div>
+    <button id="pause" onclick="Pause()"> || </button>
+    <button id="previous" onclick="toPreviousPage()"> << </button>
+    <button id="next" onclick="toNextPage()"> >> </button>
+</div>
+
+<script src="script.js"></script>
+<script type="text/javascript">
+    setPage(2);
+    countDown();
+</script>
+</body>
+</html>
